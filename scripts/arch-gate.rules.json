@@ -1,0 +1,50 @@
+{
+  "scopes": {
+    "all": "",
+    "apps": "apps/",
+    "packages": "packages/",
+    "src": "src/"
+  },
+  "rules": [
+    {
+      "id": "no-any",
+      "rule": "No 'any' — use discriminated unions + type guards.",
+      "scope": ["all"],
+      "skipPath": "\\.(test|generated)\\.",
+      "line": "(:\\s*any\\b|<any>|\\bas any\\b)"
+    },
+    {
+      "id": "no-non-null-assertion",
+      "rule": "No non-null '!' assertion — narrow with a type guard.",
+      "scope": ["all"],
+      "skipPath": "\\.(test|generated)\\.",
+      "line": "[]A-Za-z0-9_)]![.;,)\\[]"
+    },
+    {
+      "id": "no-ts-ignore",
+      "rule": "No @ts-ignore/@ts-expect-error/@ts-nocheck — fix the type.",
+      "scope": ["all"],
+      "line": "@ts-(ignore|expect-error|nocheck)"
+    },
+    {
+      "id": "no-import-extension",
+      "rule": "No file extension in relative imports (moduleResolution=bundler).",
+      "scope": ["all"],
+      "line": "from\\s+['\"]\\.{1,2}/[^'\"]*\\.(js|ts|jsx|tsx)['\"]"
+    },
+    {
+      "id": "one-class-per-file",
+      "rule": "One exported class per file — split by concern.",
+      "scope": ["all"],
+      "skipPath": "\\.(test|generated)\\.",
+      "kind": "multi-class"
+    },
+    {
+      "id": "no-duplicate-function",
+      "rule": "Same distinctive function name defined in 2+ files — extract a shared helper.",
+      "scope": ["all"],
+      "skipPath": "\\.(test|generated)\\.",
+      "kind": "dup-symbol"
+    }
+  ]
+}

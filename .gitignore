@@ -1,1 +1,4 @@
+# gitignored runtime state — the measure substrate, regenerated every session.
+.claude/.hookstate/
 .DS_Store
+node_modules/
